@@ -10,13 +10,12 @@ jobs:
       ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }} 
     steps:
       - name: "Set Env"
-        run: |
-        echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 3)" >> $ECS \
-        echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 4)" >> $GITHUB_ENV \
-        echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 5)" >> $GITHUB_SERVICE \
+        run: echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 4)" >> $GITHUB_ENV
+      - name: "Set Env"
+        run: echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 5)" >> $GITHUB_SERVICE
       - name: "Show Env"
-        run: |
-        echo $GITHUB_ENV \
-        echo $GITHUB_SERVICE \
+        run: echo $GITHUB_ENV
+      - name: "Show Service"
+        run: echo $GITHUB_SERVICE
       - name: "Checkout"
         uses: actions/checkout@master
