@@ -13,5 +13,5 @@ jobs:
       - name: Set Env
         id: set-env
         run: |
-        echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 3)" >> $GITHUB_ENV ### head/ref/branch/env
-        echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 4)" >> $GITHUB_SERVICE ### 
+        echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 4)" >> $GITHUB_ENV ### head/ref/branch/env
+        echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 5)" >> $GITHUB_SERVICE ### 
