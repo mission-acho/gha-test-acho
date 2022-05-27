@@ -14,7 +14,5 @@ jobs:
         run: |
           echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 3)" >> $GITHUB_ENV
           echo $GITHUB_ENV
-      - name: Set Service
-        run: |
-          echo "GH_BRANCH2=$( echo ${{ github.ref }} | cut -d / -f 5)" >> $GITHUB_SERVICE
-          echo $GITHUB_SERVICE
+          echo "GH_BRAN=$( echo ${{ github.ref }} | cut -d / -f 5)" >> $GITHUB_SERV
+          echo $GITHUB_SERV
