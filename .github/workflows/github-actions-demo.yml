@@ -11,4 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set Env
-        run: echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 5)" >> $GITHUB_ENV
+        run: |
+        echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 5)" >> $GITHUB_ENV
+        echo $GITHUB_ENV
+        
