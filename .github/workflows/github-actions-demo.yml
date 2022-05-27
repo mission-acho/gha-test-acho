@@ -6,12 +6,10 @@ on:
 jobs:
   ecr-push:
     runs-on: 'ubuntu-latest'
-    # outputs:
-    #   ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }} 
+    outputs:
+      ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }} 
     steps:
-      - uses: actions/checkout@v2
-      - name: Set Env
-        id: set-env
-        run: |
-        echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 4)" >> $GITHUB_ENV ### head/ref/branch/env
-        echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 5)" >> $GITHUB_SERVICE ### 
+      - name: "Set Env"
+        run: echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 3)" >> $GITHUB_ENV
+      - name: "Checkout"
+        uses: actions/checkout@master
