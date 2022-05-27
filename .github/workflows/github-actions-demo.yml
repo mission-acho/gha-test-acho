@@ -13,8 +13,8 @@ jobs:
       - name: Set Env
         run: |
           echo "GH_ENV=$( echo ${{ github.ref }} | cut -d / -f 5)" >> $GITHUB_ENV
-          echo "GH_SVC=$( echo ${{ github.ref }} | cut -d / -f 4)" >> $GITHUB_SVC
+          echo $GH_ENV
       - name: Set Service
         run: |
-          echo $GH_ENV
+          echo "GH_SVC=$( echo ${{ github.ref }} | cut -d / -f 4)" >> $GITHUB_SVC
           echo $GH_SVC
