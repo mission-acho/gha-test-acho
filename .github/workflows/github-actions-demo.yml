@@ -11,11 +11,7 @@ jobs:
     steps:
       - name: "Set Env"
         run: echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 4)" >> $GITHUB_ENV
-      - name: "Set Service"
-        run: echo "GH_BRANCH=$( echo ${{ github.ref }} | cut -d / -f 5)" >> $GITHUB_SERVICE
       - name: "Show Env"
         run: echo $GITHUB_ENV
-      - name: "Show Service"
-        run: echo $GITHUB_SERVICE
       - name: "Checkout"
         uses: actions/checkout@master
